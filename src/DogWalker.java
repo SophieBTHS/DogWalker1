@@ -23,7 +23,7 @@ public class DogWalker {
      */
     public int walkDogs(int hour){
         int dogs = new company.numAvailableDogs(hour);
-
+        return dogs;
     }
 
     /**

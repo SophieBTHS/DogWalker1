@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        DogWalkCompany bestDogWalkers = new DogWalkCompany();
+        DogWalkCompany c = new DogWalkCompany();
+        DogWalker w = new DogWalker(7, c);
     }
 }
