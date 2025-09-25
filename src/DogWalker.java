@@ -22,7 +22,7 @@ public class DogWalker {
      * maxDogs > 0
      */
     public int walkDogs(int hour){
-        int dogs = new company.numAvailableDogs(hour);
+        int dogs = company.numAvailableDogs(hour);
         return dogs;
     }
 
