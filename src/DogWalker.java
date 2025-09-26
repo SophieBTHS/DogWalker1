@@ -23,6 +23,8 @@ public class DogWalker {
      */
     public int walkDogs(int hour){
         int dogs = company.numAvailableDogs(hour);
+        if (dogs > maxDogs) dogs = maxDogs;
+        company.updateDogs(hour, dogs);
         return dogs;
     }
 
@@ -32,6 +34,16 @@ public class DogWalker {
      * Preconditions: 0 <= startHour <= endHour <= 23
      * maxDogs > 0
      */
-//    public int dogWalkShift(int startHour, int endHour)
-//    { /* to be implemented in part (b) */ }
+    public int dogWalkShift(int startHour, int endHour){
+        int pay = 0;
+        while (endHour > startHour){
+            int dogs = walkDogs(startHour);
+            pay += dogs * 5;
+            if (dogs == maxDogs || (startHour >= 9 && startHour <= 17)){
+                pay += 3;
+            }
+            startHour += 1;
+        }
+        return pay;
+    }
 }
