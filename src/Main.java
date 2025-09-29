@@ -5,8 +5,12 @@ public class Main {
 
         int hour = 0;
         while (hour < 24) {
-            int dogs = Math.random();
+            int dogs = (int) (Math.random() * 10);
             c.changeSchedule(hour, dogs);
+            hour++;
+
         }
+        c.getSchedule();
+        System.out.println(w.dogWalkShift(9, 17));
     }
 }
