@@ -11,6 +11,12 @@ public class DogWalkCompany {
         schedule[hour] += dogs;
     }
 
+    public void getSchedule(){
+        for (int i = 0; i < 24; i++){
+            System.out.println(i + "    " + schedule[i]);
+        }
+    }
+
     public int numAvailableDogs(int hour) {return schedule[hour];}
 
     public void updateDogs(int hour, int numberDogsWalked) {
