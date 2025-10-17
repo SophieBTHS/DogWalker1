@@ -5,6 +5,8 @@ public class DogWalkCompany {
         schedule = new int[24];
     }
 
+    public DogWalkCompany(int[] schedule){this.schedule = schedule;}
+
     public void changeSchedule(int hour, int dogs) {
         schedule[hour] += dogs;
     }

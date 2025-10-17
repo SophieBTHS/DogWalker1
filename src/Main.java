@@ -1,12 +1,21 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        DogWalkCompany c = new DogWalkCompany();
-        DogWalker w = new DogWalker(7, c);
-
-        int hour = 0;
-        while (hour < 24) {
-            int dogs = Math.random();
-            c.changeSchedule(hour, dogs);
+        DogWalkCompany[] companies = companyRead("Companies");
         }
+    public static DogWalkCompany[] companyRead(File c) throws FileNotFoundException {
+        DogWalkCompany[] companies = new DogWalkCompany[1000];
+        Scanner s = new Scanner(c);
+        int index = 0;
+        while(s.hasNextLine()){
+            int[] schedule = new int[24];
+            for(int i=0;i<24;i++){
+                schedule[i] = s.nextInt();
+            }
+            companies[index] = new DogWalkCompany(schedule);
+        }
+        return companies;
     }
 }
