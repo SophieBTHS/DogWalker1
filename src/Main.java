@@ -2,8 +2,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 public class Main {
-    public static void main(String[] args) {
-        DogWalkCompany[] companies = companyRead("Companies");
+    public static void main(String[] args) throws FileNotFoundException{
+        File c = new File("Companies.txt");
+        DogWalkCompany[] companies = companyRead(c);
         }
     public static DogWalkCompany[] companyRead(File c) throws FileNotFoundException {
         DogWalkCompany[] companies = new DogWalkCompany[1000];
